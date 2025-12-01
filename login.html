@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — AI Water Well Predictor</title>
+
+  <!-- Bootstrap CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    * {
+      transition: all 0.3s ease;
+    }
+    
+    body { 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    
+    .login-container {
+      animation: fadeInUp 0.6s ease-out;
+    }
+    
+    @keyframes fadeInUp {
+      from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0); 
+      }
+    }
+    
+    .login-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      padding: 3rem;
+      max-width: 450px;
+      width: 100%;
+    }
+    
+    .login-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    
+    .login-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      color: white;
+      font-size: 2rem;
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    }
+    
+    .login-header h2 {
+      color: #1f2937;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .login-header p {
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+    
+    .form-control {
+      border-radius: 12px;
+      border: 2px solid #e5e7eb;
+      padding: 0.75rem 1.25rem;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    .input-group-icon {
+      position: relative;
+    }
+    
+    .input-group-icon i {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #9ca3af;
+      z-index: 10;
+    }
+    
+    .input-group-icon .form-control {
+      padding-left: 3rem;
+    }
+    
+    .btn-login {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: none;
+      border-radius: 12px;
+      padding: 0.875rem 2rem;
+      font-weight: 600;
+      font-size: 1rem;
+      color: white;
+      width: 100%;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+    }
+    
+    .btn-login:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+      background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+      color: white;
+    }
+    
+    .btn-login:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    .alert {
+      border-radius: 12px;
+      border: none;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .alert-danger {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+    
+    .alert-success {
+      background: #d1fae5;
+      color: #065f46;
+    }
+    
+    .demo-credentials {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border-left: 4px solid #3b82f6;
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-top: 2rem;
+    }
+    
+    .demo-credentials h6 {
+      color: #1e40af;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .demo-credentials p {
+      color: #1e3a8a;
+      font-size: 0.9rem;
+      margin: 0.5rem 0;
+    }
+    
+    .demo-credentials code {
+      background: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      color: #1e40af;
+    }
+    
+    .spinner-border-sm {
+      width: 1rem;
+      height: 1rem;
+      border-width: 2px;
+    }
+  </style>
+  <link rel="icon" href="data:,">
+</head>
+<body>
+<div class="login-container">
+  <div class="login-card">
+    <div class="login-header">
+      <div class="login-icon">
+        <i class="fas fa-water"></i>
+      </div>
+      <h2>AI Water Well Predictor</h2>
+      <p>Sign in to access the prediction system</p>
+    </div>
+
+    <div id="alert-container"></div>
+
+    <form id="login-form">
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Username</label>
+        <div class="input-group-icon">
+          <i class="fas fa-user"></i>
+          <input 
+            type="text" 
+            id="username" 
+            class="form-control" 
+            placeholder="Enter your username"
+            required
+            autocomplete="username"
+          >
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Password</label>
+        <div class="input-group-icon">
+          <i class="fas fa-lock"></i>
+          <input 
+            type="password" 
+            id="password" 
+            class="form-control" 
+            placeholder="Enter your password"
+            required
+            autocomplete="current-password"
+          >
+        </div>
+      </div>
+
+      <button type="submit" id="btn-login" class="btn btn-login">
+        <span id="btn-text">Sign In</span>
+        <span id="btn-spinner" class="spinner-border spinner-border-sm ms-2 d-none" role="status"></span>
+      </button>
+    </form>
+
+    <div class="demo-credentials">
+      <h6><i class="fas fa-info-circle"></i> Demo Credentials</h6>
+      <p><strong>Admin:</strong> <code>admin</code> / <code>admin123</code></p>
+      <p><strong>User:</strong> <code>user</code> / <code>user123</code></p>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS (bundle) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  const API_BASE = window.location.origin;
+  const LOGIN_URL = `${API_BASE}/login`;
+
+  function showAlert(message, type = 'danger') {
+    const alertContainer = document.getElementById('alert-container');
+    alertContainer.innerHTML = `
+      <div class="alert alert-${type} alert-dismissible fade show" role="alert">
+        <i class="fas fa-${type === 'danger' ? 'exclamation-triangle' : 'check-circle'} me-2"></i>
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      </div>
+    `;
+  }
+
+  function setLoading(loading) {
+    const btn = document.getElementById('btn-login');
+    const btnText = document.getElementById('btn-text');
+    const btnSpinner = document.getElementById('btn-spinner');
+    
+    if (loading) {
+      btn.disabled = true;
+      btnText.textContent = 'Signing in...';
+      btnSpinner.classList.remove('d-none');
+    } else {
+      btn.disabled = false;
+      btnText.textContent = 'Sign In';
+      btnSpinner.classList.add('d-none');
+    }
+  }
+
+  document.getElementById('login-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value;
+
+    if (!username || !password) {
+      showAlert('Please enter both username and password');
+      return;
+    }
+
+    setLoading(true);
+    document.getElementById('alert-container').innerHTML = '';
+
+    try {
+      const response = await fetch(LOGIN_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include', // Important for session cookies
+        body: JSON.stringify({ username, password })
+      });
+
+      // Read response text once
+      const responseText = await response.text();
+      
+      // Check if response is ok before parsing
+      if (!response.ok) {
+        // Try to get error message from response
+        let errorMessage = 'Invalid username or password';
+        try {
+          const errorData = JSON.parse(responseText);
+          errorMessage = errorData.error || errorMessage;
+        } catch {
+          // If response is not JSON, use status text
+          errorMessage = responseText || `Server error: ${response.status} ${response.statusText}`;
+        }
+        showAlert(errorMessage);
+        setLoading(false);
+        return;
+      }
+
+      // Parse successful response
+      let data;
+      try {
+        if (!responseText) {
+          throw new Error('Empty response from server');
+        }
+        data = JSON.parse(responseText);
+      } catch (parseError) {
+        console.error('Failed to parse login response:', parseError);
+        showAlert('Invalid response from server. Please try again.');
+        setLoading(false);
+        return;
+      }
+
+      if (data.success) {
+        showAlert(`Welcome, ${data.username || username}! Redirecting...`, 'success');
+        setTimeout(() => {
+          window.location.href = '/index.html';
+        }, 1000);
+      } else {
+        showAlert(data.error || 'Login failed. Please try again.');
+        setLoading(false);
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      let errorMessage = 'Connection error. Please check if the server is running.';
+      if (error.message) {
+        errorMessage = error.message;
+      }
+      showAlert(errorMessage);
+      setLoading(false);
+    }
+  });
+
+  // Allow Enter key to submit
+  document.getElementById('password').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      document.getElementById('login-form').dispatchEvent(new Event('submit'));
+    }
+  });
+</script>
+</body>
+</html>
+

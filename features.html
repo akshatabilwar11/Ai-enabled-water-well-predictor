@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Features — AI Water Well Predictor</title>
+
+  <!-- Bootstrap CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    * {
+      transition: all 0.3s ease;
+    }
+    
+    body { 
+      font-family: 'Inter', sans-serif;
+      background: #f8f9fa;
+    }
+    
+    .navbar {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 1rem 0;
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: white !important;
+    }
+    
+    .nav-link {
+      color: rgba(255,255,255,0.9) !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      padding: 0.5rem 1rem !important;
+      border-radius: 8px;
+    }
+    
+    .nav-link:hover, .nav-link.active {
+      background: rgba(255,255,255,0.1);
+      color: white !important;
+    }
+    
+    .btn-nav {
+      background: white;
+      color: #667eea;
+      border: none;
+      padding: 0.5rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    
+    .page-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 4rem 0;
+      text-align: center;
+    }
+    
+    .page-header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    
+    .features-section {
+      padding: 4rem 0;
+    }
+    
+    .feature-detail-card {
+      background: white;
+      border-radius: 15px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+      height: 100%;
+    }
+    
+    .feature-icon-large {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .feature-detail-card h3 {
+      color: #1f2937;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    .feature-detail-card p {
+      color: #6b7280;
+      line-height: 1.8;
+    }
+    
+    .feature-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .feature-list li {
+      padding: 0.75rem 0;
+      color: #6b7280;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .feature-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .feature-list li i {
+      color: #667eea;
+      margin-right: 0.75rem;
+    }
+    
+    .footer {
+      background: #1f2937;
+      color: white;
+      padding: 3rem 0 1.5rem;
+    }
+    
+    .footer h5 {
+      color: white;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    .footer a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+    }
+    
+    .footer a:hover {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="home.html">
+        <i class="fas fa-water me-2"></i>AI Water Well Predictor
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="features.html">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Predictor</a>
+          </li>
+          <li class="nav-item ms-2">
+            <a href="login.html" class="btn btn-nav">
+              <i class="fas fa-sign-in-alt me-2"></i>Login
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1>Platform Features</h1>
+      <p class="lead">Comprehensive tools for water well planning and analysis</p>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <div class="features-section">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="feature-detail-card">
+            <div class="feature-icon-large">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3>AI-Powered Predictions</h3>
+            <p>Our advanced machine learning models use Random Forest algorithms trained on comprehensive datasets to provide accurate predictions for water well characteristics.</p>
+            <ul class="feature-list mt-3">
+              <li><i class="fas fa-check-circle"></i> High accuracy predictions</li>
+              <li><i class="fas fa-check-circle"></i> Multiple model ensemble</li>
+              <li><i class="fas fa-check-circle"></i> Continuous learning</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="feature-detail-card">
+            <div class="feature-icon-large">
+              <i class="fas fa-map-marked-alt"></i>
+            </div>
+            <h3>Interactive Map Interface</h3>
+            <p>Select locations directly on an interactive map powered by OpenStreetMap. Get instant coordinate information and visualize your potential well sites.</p>
+            <ul class="feature-list mt-3">
+              <li><i class="fas fa-check-circle"></i> Click-to-select locations</li>
+              <li><i class="fas fa-check-circle"></i> Real-time coordinates</li>
+              <li><i class="fas fa-check-circle"></i> Geographic visualization</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="feature-detail-card">
+            <div class="feature-icon-large">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Comprehensive Metrics</h3>
+            <p>Receive detailed predictions for all critical water well parameters in an easy-to-understand visual format.</p>
+            <ul class="feature-list mt-3">
+              <li><i class="fas fa-check-circle"></i> Suitability probability</li>
+              <li><i class="fas fa-check-circle"></i> Predicted depth (meters)</li>
+              <li><i class="fas fa-check-circle"></i> Discharge rate (lps)</li>
+              <li><i class="fas fa-check-circle"></i> Water quality index</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="feature-detail-card">
+            <div class="feature-icon-large">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Secure Authentication</h3>
+            <p>Enterprise-grade security with user authentication, session management, and encrypted data transmission to protect your information.</p>
+            <ul class="feature-list mt-3">
+              <li><i class="fas fa-check-circle"></i> Password encryption</li>
+              <li><i class="fas fa-check-circle"></i> Session management</li>
+              <li><i class="fas fa-check-circle"></i> Secure API endpoints</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="feature-detail-card">
+            <div class="feature-icon-large">
+              <i class="fas fa-sliders-h"></i>
+            </div>
+            <h3>Detailed Site Analysis</h3>
+            <p>Input comprehensive site-specific data including soil type, lithology, land use, rainfall, elevation, and environmental factors for accurate predictions.</p>
+            <ul class="feature-list mt-3">
+              <li><i class="fas fa-check-circle"></i> Soil type analysis</li>
+              <li><i class="fas fa-check-circle"></i> Lithology assessment</li>
+              <li><i class="fas fa-check-circle"></i> Environmental factors</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="feature-detail-card">
+            <div class="feature-icon-large">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>Responsive Design</h3>
+            <p>Access the platform from any device with a beautiful, modern interface that works seamlessly on desktop, tablet, and mobile devices.</p>
+            <ul class="feature-list mt-3">
+              <li><i class="fas fa-check-circle"></i> Mobile-friendly</li>
+              <li><i class="fas fa-check-circle"></i> Tablet optimized</li>
+              <li><i class="fas fa-check-circle"></i> Desktop enhanced</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h5><i class="fas fa-water me-2"></i>AI Water Well Predictor</h5>
+          <p class="text-muted">Advanced AI-powered platform for water well suitability prediction.</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="index.html">Predictor</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5>Contact</h5>
+          <ul class="list-unstyled">
+            <li><i class="fas fa-envelope me-2"></i>support@waterwellpredictor.com</li>
+            <li><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="bg-light my-4">
+      <div class="row">
+        <div class="col-12 text-center">
+          <p class="mb-0 text-muted">&copy; 2024 AI Water Well Predictor. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (bundle) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
